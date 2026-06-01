@@ -1,0 +1,35 @@
+# ==============================================================================
+# Lexify-India Backend — Python Dependencies
+# ==============================================================================
+
+# --- Web Framework ---
+fastapi>=0.115
+uvicorn[standard]>=0.34
+
+# --- Data Validation ---
+pydantic>=2.11
+pydantic-settings>=2.9
+
+# --- File Uploads ---
+python-multipart>=0.0.20
+
+# --- Environment ---
+python-dotenv>=1.1
+
+# --- OCR Agent (Phase 2) ---
+pdfplumber>=0.10.3
+pdf2image>=1.16.3
+Pillow>=10.1.0
+opencv-python>=4.8.1
+numpy>=1.24.0
+paddleocr>=2.7.0
+
+# --- RAG / LLM Agent (Phase 2) ---
+google-genai>=2.0.0              # Google Gemini API (new SDK)
+langchain-text-splitters>=0.0.1  # Document chunking
+
+# --- Vector DB ---
+chromadb>=0.4.18
+
+# --- Testing ---
+requests>=2.31.0

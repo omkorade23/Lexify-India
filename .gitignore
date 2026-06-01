@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Environment — NEVER commit secrets
+.env
+.env.local
+!.env.example
+
+# Data — auto-generated or user data
+backend/data/uploads/*
+backend/data/chroma_db/*
+backend/data/test/
+!backend/data/uploads/.gitkeep
+!backend/data/chroma_db/.gitkeep
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test artifacts
+backend/data/test_*.pdf
+backend/data/test_*.txt
