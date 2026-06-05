@@ -23,7 +23,7 @@ backend/data/test/
 !backend/data/chroma_db/.gitkeep
 
 # IDE
-.vscode/settings.json
+.vscode/
 .idea/
 *.swp
 *.swo
@@ -39,3 +39,24 @@ logs/
 # Test artifacts
 backend/data/test_*.pdf
 backend/data/test_*.txt
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+coverage/
+
+# Python extras
+.pytest_cache/
+.mypy_cache/
+
+# Environment Extras
+.env.development
+.env.production
+.env.*
+*.env
+
+# Databases
+*.sqlite
+*.db
+*.db-journal

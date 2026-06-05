@@ -1,0 +1,47 @@
+{
+  "eb5e2bbe-01a1-4af5-b60b-ade4c8543123": {
+    "filename": "test_rental.pdf",
+    "file_path": "data\\uploads\\eb5e2bbe-01a1-4af5-b60b-ade4c8543123_test_rental.pdf",
+    "document_type": "rental_agreement",
+    "num_pages": 1,
+    "upload_date": "2026-05-27T05:51:23.143712Z",
+    "extraction_status": "completed",
+    "chunks_stored": 1
+  },
+  "d8bd41a1-bed8-447f-968e-ae002f5cd015": {
+    "filename": "test_rental.pdf",
+    "file_path": "data\\uploads\\d8bd41a1-bed8-447f-968e-ae002f5cd015_test_rental.pdf",
+    "document_type": "rental_agreement",
+    "num_pages": 1,
+    "upload_date": "2026-05-27T05:55:24.237953Z",
+    "extraction_status": "completed",
+    "chunks_stored": 1
+  },
+  "6b26fd79-07cf-4731-a60a-03f4d2f8836a": {
+    "filename": "test_rental.pdf",
+    "file_path": "data\\uploads\\6b26fd79-07cf-4731-a60a-03f4d2f8836a_test_rental.pdf",
+    "document_type": "rental_agreement",
+    "num_pages": 1,
+    "upload_date": "2026-05-27T16:56:26.005121Z",
+    "extraction_status": "completed",
+    "chunks_stored": 1
+  },
+  "e15e2aef-f0c3-4f40-b13a-7ccfa0d5ecfe": {
+    "filename": "test_rental.pdf",
+    "file_path": "data\\uploads\\e15e2aef-f0c3-4f40-b13a-7ccfa0d5ecfe_test_rental.pdf",
+    "document_type": "rental_agreement",
+    "num_pages": 1,
+    "upload_date": "2026-05-27T17:14:09.409942Z",
+    "extraction_status": "completed",
+    "chunks_stored": 1
+  },
+  "1e4f3804-19c4-4bce-9a5e-a2a5151279f4": {
+    "filename": "test_rental.pdf",
+    "file_path": "data\\uploads\\1e4f3804-19c4-4bce-9a5e-a2a5151279f4_test_rental.pdf",
+    "document_type": "rental_agreement",
+    "num_pages": 1,
+    "upload_date": "2026-06-01T07:58:40.250535Z",
+    "extraction_status": "completed",
+    "chunks_stored": 1
+  }
+}
