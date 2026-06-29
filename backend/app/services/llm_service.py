@@ -19,6 +19,7 @@ from app.models.chat import Citation, QueryResponse, AssembledContext
 from app.core.prompts import (
     DUAL_SOURCE_SYSTEM_PROMPT, DUAL_SOURCE_USER_TEMPLATE,
     DOCUMENT_ONLY_SYSTEM_PROMPT, DOCUMENT_ONLY_USER_TEMPLATE,
+    LEGAL_ONLY_SYSTEM_PROMPT, LEGAL_ONLY_USER_TEMPLATE,
     NOT_FOUND_TEMPLATE,
     format_document_context, format_legal_context, format_conversation_history,
 )
@@ -43,13 +44,13 @@ class LLMService:
         """Generate grounded response from assembled dual-source context."""
         history = conversation_history or []
 
-        if not context.has_document_context:
+        if not context.has_document_context and not context.has_legal_context:
             return QueryResponse(
                 answer=NOT_FOUND_TEMPLATE.format(question=question),
                 citations=[], confidence="none", related_sections=[], has_legal_context=False,
             )
 
-        if context.has_legal_context:
+        if context.has_document_context and context.has_legal_context:
             system_prompt = DUAL_SOURCE_SYSTEM_PROMPT
             user_message = DUAL_SOURCE_USER_TEMPLATE.format(
                 document_context=format_document_context(context.document_chunks),
@@ -57,10 +58,17 @@ class LLMService:
                 conversation_history=format_conversation_history(history),
                 question=question,
             )
-        else:
+        elif context.has_document_context and not context.has_legal_context:
             system_prompt = DOCUMENT_ONLY_SYSTEM_PROMPT
             user_message = DOCUMENT_ONLY_USER_TEMPLATE.format(
                 document_context=format_document_context(context.document_chunks),
+                conversation_history=format_conversation_history(history),
+                question=question,
+            )
+        elif not context.has_document_context and context.has_legal_context:
+            system_prompt = LEGAL_ONLY_SYSTEM_PROMPT
+            user_message = LEGAL_ONLY_USER_TEMPLATE.format(
+                legal_context=format_legal_context(context.legal_chunks),
                 conversation_history=format_conversation_history(history),
                 question=question,
             )
@@ -82,7 +90,7 @@ class LLMService:
             raise RuntimeError(f"Failed to generate response: {e}") from e
 
         citations = self._build_citations(context)
-        confidence = self._calculate_confidence(context.document_chunks)
+        confidence = self._calculate_confidence(context.document_chunks, context.legal_chunks)
         related_sections = self._extract_related_sections(context.document_chunks)
 
         return QueryResponse(
@@ -117,12 +125,14 @@ class LLMService:
             ))
         return citations
 
-    def _calculate_confidence(self, document_chunks: list) -> str:
-        if not document_chunks:
+    def _calculate_confidence(self, document_chunks: list, legal_chunks: list = None) -> str:
+        # Prefer document chunks for confidence; fall back to legal chunks for legal-only queries.
+        chunks = document_chunks if document_chunks else (legal_chunks or [])
+        if not chunks:
             return "none"
-        top = document_chunks[0].get("similarity_score", 0.0)
+        top = chunks[0].get("similarity_score", 0.0)
         if top >= 0.85: return "high"
-        elif top >= 0.75: return "medium"
+        elif top >= 0.70: return "medium"
         else: return "low"
 
     def _extract_related_sections(self, document_chunks: list) -> List[str]:
