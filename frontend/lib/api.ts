@@ -3,6 +3,7 @@ import type {
   QueryRequest,
   QueryResponse,
   ApiError,
+  Message,
 } from "./types";
 
 const API_BASE =
@@ -69,6 +70,26 @@ export async function queryDocument(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
   });
+}
+
+export async function queryLegal(request: {
+  question: string;
+  conversation_history: Message[];
+}): Promise<QueryResponse> {
+  const response = await fetch(`${API_BASE}/api/legal-chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(request),
+  });
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}));
+    throw new Error(
+      error?.detail ?? `Legal chat failed: ${response.status}`
+    );
+  }
+
+  return response.json();
 }
 
 export async function getDocument(documentId: string) {

@@ -2,8 +2,8 @@ import React from "react";
 import { Scale, AlertTriangle } from "lucide-react";
 import type { ChatMessage } from "@/lib/types";
 import SourcesSection from "./SourcesSection";
-import ConfidenceBadge from "./ConfidenceBadge";
-import LegalContextBadge from "./LegalContextBadge";
+// import ConfidenceBadge from "./ConfidenceBadge"; // preserved, not rendered
+// import LegalContextBadge from "./LegalContextBadge"; // preserved, not rendered
 import { cn } from "@/lib/utils";
 
 interface AIResponseBlockProps {
@@ -24,16 +24,6 @@ export default function AIResponseBlock({ message }: AIResponseBlockProps) {
 
       {/* Content — fills column width minus avatar+gap */}
       <div className="flex-1 min-w-0">
-        {/* Badges row */}
-        {!message.error && (message.confidence || message.has_legal_context) && (
-          <div className="flex flex-wrap items-center gap-2 mb-3">
-            {message.confidence && (
-              <ConfidenceBadge confidence={message.confidence} />
-            )}
-            {message.has_legal_context && <LegalContextBadge />}
-          </div>
-        )}
-
         {/* Answer text */}
         <div
           className={cn(

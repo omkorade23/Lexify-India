@@ -43,5 +43,23 @@
     "upload_date": "2026-06-01T07:58:40.250535Z",
     "extraction_status": "completed",
     "chunks_stored": 1
+  },
+  "b4a1f36b-1497-468d-9a84-0934495ca1c3": {
+    "filename": "Learning Licence.pdf",
+    "file_path": "data\\uploads\\b4a1f36b-1497-468d-9a84-0934495ca1c3_Learning Licence.pdf",
+    "document_type": "legal_document",
+    "num_pages": 2,
+    "upload_date": "2026-06-05T16:14:07.999881Z",
+    "extraction_status": "completed",
+    "chunks_stored": 4
+  },
+  "6f79058d-8b09-4f55-a844-908ceaccd221": {
+    "filename": "test_lease.pdf",
+    "file_path": "data\\uploads\\6f79058d-8b09-4f55-a844-908ceaccd221_test_lease.pdf",
+    "document_type": "rental_agreement",
+    "num_pages": 1,
+    "upload_date": "2026-06-29T10:04:51.298504Z",
+    "extraction_status": "completed",
+    "chunks_stored": 1
   }
 }

@@ -1,6 +1,6 @@
-# Project State Report — Lexify India Frontend
-**Date:** 2026-06-29
-**Phase:** 3E complete (Compact Sources Display & Badge Removal)
+# Project State Report — Lexify India
+**Date:** 2026-06-05
+**Phase:** 4A complete (General Legal Chat Integration)
 **Build:** ✅ Exit code 0 · 0 TypeScript errors · 12 routes
 
 ---
@@ -64,11 +64,11 @@ chat workspace and sidebar. There is no dashboard.
 |-----------|------|--------|
 | ChatInput | components/chat/ChatInput.tsx | ✅ Complete — pill shape, 760px constrained, no mic, no focus border |
 | MessageBubble | components/chat/MessageBubble.tsx | ✅ Complete — max-w-[72%] right-aligned |
-| AIResponseBlock | components/chat/AIResponseBlock.tsx | ✅ Complete — flex-1 full width, removed badge rendering |
-| SourcesSection | components/chat/SourcesSection.tsx | ✅ Complete — rewritten to toggleable compact display |
-| CitationCard | components/chat/CitationCard.tsx | ⚠️ Preserved but not active |
-| ConfidenceBadge | components/chat/ConfidenceBadge.tsx | ⚠️ Preserved but not active |
-| LegalContextBadge | components/chat/LegalContextBadge.tsx | ⚠️ Preserved but not active |
+| AIResponseBlock | components/chat/AIResponseBlock.tsx | ✅ Complete — flex-1 full width |
+| SourcesSection | components/chat/SourcesSection.tsx | ✅ Complete |
+| CitationCard | components/chat/CitationCard.tsx | ✅ Complete |
+| ConfidenceBadge | components/chat/ConfidenceBadge.tsx | ✅ Complete |
+| LegalContextBadge | components/chat/LegalContextBadge.tsx | ✅ Complete |
 | SuggestedChips | components/chat/SuggestedChips.tsx | ✅ Complete — 48px indent |
 | ConversationTimestamp | components/chat/ConversationTimestamp.tsx | ✅ Complete — my-4 |
 
@@ -119,15 +119,6 @@ chat workspace and sidebar. There is no dashboard.
 - Paperclip: 20px, #4A4A4A, hover #888888, outline: none
 - Mic: removed
 - Send: 36px circle, #22C55E when text present, hover #16A34A + box-shadow 0 0 12px rgba(34,197,94,0.30), outline: none
-
-### Badges & Sources
-- **Visible Badges Removed**: `ConfidenceBadge` and `LegalContextBadge` are removed from the visible UI inside `AIResponseBlock.tsx` but their underlying data fields (`message.confidence` and `message.has_legal_context`) are preserved in the data layer.
-- **SourcesSection Display**:
-  - Compact collapsible toggle button reading `View Sources (N)` or `Hide Sources` with ChevronDown/ChevronUp icons.
-  - Positioned at `margin-top: 12px` and `margin-left: 48px` to align with the AI response text indent.
-  - When expanded, shows a vertical stack of compact citation items with a left border indicating the source type (`#4A9EFF` for documents, `#F5A623` for legal references).
-  - Shows page/section/act info in `#888888` at 12px, and text snippets sliced to first 80 characters in `#666666` at 12px italic.
-  - `CitationCard` is preserved in the repository but completely bypassed in `SourcesSection.tsx`.
 
 ### SuggestedChips
 - margin-left: 48px (w-9=36px avatar + gap-3=12px)
@@ -188,17 +179,17 @@ All calls go to `NEXT_PUBLIC_API_URL` (default: `http://localhost:8000`).
 |----------------|----------|--------|
 | Upload document | POST /api/documents/upload | ✅ Wired |
 | Document chat | POST /api/chat | ✅ Wired (via useChat) |
-| General legal chat | (no endpoint yet) | ⏳ Placeholder shown |
+| General legal chat | POST /api/legal-chat | ✅ Wired |
 | List documents | (no endpoint yet) | ⏳ localStorage fallback |
 | Chat history | (no endpoint yet) | ⏳ Session-only state |
 
 ---
 
-## Backend Status (unchanged from Phase 2)
+## Backend Status
 
 - Framework: FastAPI (Python)
 - CORS: localhost:3000 allowed
-- Endpoints: POST /api/documents/upload, POST /api/chat, GET /health
+- Endpoints: POST /api/documents/upload, POST /api/chat, POST /api/legal-chat, GET /health
 - Vector DB: ChromaDB with 37 seeded Indian legal entries
 - Embedding model: gemini-embedding-001 (3072-dim)
 - LLM: gemini-2.5-flash
@@ -210,9 +201,8 @@ All calls go to `NEXT_PUBLIC_API_URL` (default: `http://localhost:8000`).
 
 | Area | Limitation | Impact |
 |------|-----------|--------|
-| General chat | Shows placeholder (no backend endpoint) | User sees "coming soon" message |
 | Conversation history | Lost on page refresh | No persistence |
-| Document list | localStorage only | Not synced to backend |
+| Document list | localStorage only | Not synced to backend (API not yet added) |
 | Auth | No authentication gate | Anyone can access all routes |
 | LandingNav | Log In uses window.location.href | Minor — functional but not Link |
 
@@ -228,24 +218,23 @@ All calls go to `NEXT_PUBLIC_API_URL` (default: `http://localhost:8000`).
 | Phase 3B | Chat-first pivot (remove dashboard, /chat entry, footer, nav) | ✅ Complete |
 | Phase 3C | Chat workspace layout refinements (column constraint, composer, empty state) | ✅ Complete |
 | Phase 3D | Composer focus-state cleanup (no border/glow/outline on focus) | ✅ Complete |
-| Phase 3E | Badge removal & compact sources toggled view | ✅ Complete |
+| Phase 4A | General Legal Chat Integration | ✅ Complete |
 
 ---
 
-## Recommended Phase 4 Work
+## Recommended Phase 5 Work
 
-### Priority 1 — General Legal Chat Backend
-Add `POST /api/legal-chat` (or extend `/api/chat` to accept `document_id: null`).
-Frontend is already wired: `useChat` passes `documentId: null` for general mode.
-Remove the placeholder response from `hooks/useChat.ts` once endpoint is ready.
+Phase 4A is complete. The following items remain:
 
-### Priority 2 — Document List API
+### Priority 1 — Phase 4B: Document Upload → Chat E2E Verification
+Start backend, upload a test document, verify the full pipeline, fix any integration errors.
+
+### Priority 2 — Phase 4C: Document Library API
 Add `GET /api/documents` endpoint returning user-scoped document list.
 Update `getStoredDocuments()` in `lib/utils.ts` to call API instead of localStorage.
 
-### Priority 3 — Conversation Persistence
-Add `POST /api/chat/session` and `GET /api/chat/history/{session_id}`.
-Update `useChat` to load history on mount and persist on send.
+### Priority 3 — Phase 4D: Conversation Persistence
+Add session and history endpoints. Update `useChat` to load history on mount and persist on send.
 
 ### Priority 4 — Auth Layer
 Add JWT or OAuth authentication.

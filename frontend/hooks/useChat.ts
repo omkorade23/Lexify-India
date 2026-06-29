@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { queryDocument } from "@/lib/api";
+import { queryDocument, queryLegal } from "@/lib/api";
 import { generateId } from "@/lib/utils";
 import type { ChatMessage, Message } from "@/lib/types";
 
@@ -41,32 +41,19 @@ export function useChat(): UseChatReturn {
       }));
 
       try {
-        // Only call document-specific RAG when a documentId is provided.
-        // When documentId is null/undefined, this is a general legal chat session —
-        // the backend will handle via the legal knowledge base only.
-        // TODO (Phase 4): Route to a dedicated /api/legal-chat endpoint when available.
-        if (!documentId) {
-          // General legal chat — placeholder until backend general endpoint is ready
-          const placeholderMsg: ChatMessage = {
-            id: generateId(),
-            role: "assistant",
-            content:
-              "General legal chat without a document is coming soon. For now, please upload a document to analyze, or the backend general endpoint needs to be enabled. Your question was: \"" +
-              question.trim() +
-              '"',
-            timestamp: new Date(),
-            confidence: "none",
-            has_legal_context: false,
-          };
-          setMessages((prev) => [...prev, placeholderMsg]);
-          return;
+        let data;
+        if (documentId) {
+          data = await queryDocument({
+            document_id: documentId,
+            question: question.trim(),
+            conversation_history: history,
+          });
+        } else {
+          data = await queryLegal({
+            question: question.trim(),
+            conversation_history: history,
+          });
         }
-
-        const data = await queryDocument({
-          document_id: documentId,
-          question: question.trim(),
-          conversation_history: history,
-        });
 
         const assistantMsg: ChatMessage = {
           id: generateId(),

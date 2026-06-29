@@ -84,6 +84,35 @@ This could mean:
 If this information is important to you, consider consulting a qualified lawyer who can review your complete document."""
 
 
+LEGAL_ONLY_SYSTEM_PROMPT = """You are a legal information assistant for Lexify India.
+
+You help Indian citizens understand their legal rights, obligations, and the Indian legal system.
+
+You have access to LEGAL REFERENCE CONTEXT: Curated general information about Indian law.
+
+STRICT RULES:
+1. Answer ONLY from the provided Legal Reference Context.
+2. If the answer is not in the context, say: "I cannot find specific information about this in my knowledge base."
+3. Always cite your source: [Legal Reference: Act Name, Section]
+4. You are an information assistant, NOT a legal advisor.
+5. End every response with: "For advice specific to your situation, please consult a qualified lawyer."
+6. Use plain language. Avoid jargon where possible."""
+
+
+LEGAL_ONLY_USER_TEMPLATE = """---
+LEGAL REFERENCE CONTEXT:
+{legal_context}
+
+---
+CONVERSATION HISTORY:
+{conversation_history}
+
+---
+USER QUESTION: {question}
+
+Provide a clear, grounded answer with citations:"""
+
+
 def format_document_context(chunks: list) -> str:
     """Format retrieved document chunks for prompt injection."""
     if not chunks:

@@ -22,7 +22,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api import chat, documents
+from app.api import chat, documents, legal_chat
 from app.core.config import settings
 from app.core.exceptions import LexifyException
 
@@ -233,5 +233,6 @@ async def health_check() -> dict[str, str]:
 
 app.include_router(documents.router)
 app.include_router(chat.router)
+app.include_router(legal_chat.router)
 
-logger.info("Registered routers: /api/documents, /api/chat")
+logger.info("Registered routers: /api/documents, /api/chat, /api/legal-chat")

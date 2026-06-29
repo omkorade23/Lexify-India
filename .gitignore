@@ -55,8 +55,17 @@ coverage/
 .env.production
 .env.*
 *.env
+!.env.example
+!.env.local.example
 
 # Databases
 *.sqlite
 *.db
 *.db-journal
+
+# Verbatim patterns from audit
+backend/venv/
+frontend/.next/
+frontend/node_modules/
+*.pyc
+

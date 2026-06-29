@@ -405,5 +405,137 @@
     "jurisdiction": "India",
     "document_type_relevance": "rental_agreement,employment_contract,nda,property_document",
     "risk_relevance": "high"
+  },
+  {
+    "id": "motor_vehicles_001",
+    "category": "motor_vehicles_law",
+    "title": "Learner Licence Requirements in India",
+    "text": "In India, a learner licence is a provisional driving licence issued to a person learning to drive. Under the Motor Vehicles Act 1988 and the Central Motor Vehicles Rules 1989, a person must be at least 18 years of age to obtain a learner licence for motor vehicles other than motorcycles without gears. For motorcycles without gears (mopeds), the minimum age is 16 years with parental consent. To obtain a learner licence, the applicant must pass a written test on traffic rules, signs, and road safety. A learner licence is valid for 6 months from the date of issue. During this period, the learner must drive only under the supervision of a person holding a valid permanent driving licence. A learner licence holder must display an L plate on the vehicle while driving. Driving without a valid learner or permanent licence is an offence under Section 3 of the Motor Vehicles Act 1988.",
+    "act_name": "Motor Vehicles Act 1988",
+    "act_section": "Section 3, Section 9",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document,court_notice",
+    "risk_relevance": null
+  },
+  {
+    "id": "motor_vehicles_002",
+    "category": "motor_vehicles_law",
+    "title": "Permanent Driving Licence Eligibility and Application Timeline",
+    "text": "After obtaining a learner licence in India, a person can apply for a permanent driving licence subject to the following conditions under the Motor Vehicles Act 1988 and Central Motor Vehicles Rules 1989: The applicant must wait a minimum of 30 days after the issue date of the learner licence before applying for the permanent licence. The application for a permanent licence must be made within 6 months (180 days) of the learner licence issue date, because the learner licence itself is valid for only 6 months. If the permanent licence application is not made within this 6-month window, the applicant must obtain a fresh learner licence and begin again. To obtain the permanent licence, the applicant must pass a practical driving test at the Regional Transport Office (RTO). The driving test assesses the applicant's ability to drive safely, follow traffic rules, and handle the vehicle competently. Upon passing the test, the RTO issues a permanent driving licence which is a smartcard format in most states. The applicant must be medically fit to drive, certified by a registered medical practitioner for certain vehicle categories.",
+    "act_name": "Motor Vehicles Act 1988",
+    "act_section": "Section 9, Section 10",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document,court_notice",
+    "risk_relevance": null
+  },
+  {
+    "id": "motor_vehicles_003",
+    "category": "motor_vehicles_law",
+    "title": "Driving Licence Validity and Renewal Rules in India",
+    "text": "A permanent driving licence in India is valid for 20 years from the date of issue or until the holder reaches 50 years of age, whichever is earlier. After the age of 50, the licence must be renewed every 5 years. The licence can be renewed up to one year before its expiry. If the licence has already expired, it can be renewed within 5 years of expiry with a late fee. After 5 years of expiry, the holder may need to pass a fresh medical test or even a fresh driving test depending on the RTO. A driving licence covers the specific categories of vehicles (classes) for which it was issued, such as MCWOG (motorcycle without gear), MCWG (motorcycle with gear), LMV (light motor vehicle), HMV (heavy motor vehicle), and others. To add a new vehicle category, the holder must apply separately and may need to pass an additional test. Driving a vehicle category not covered by the licence is an offence.",
+    "act_name": "Motor Vehicles Act 1988",
+    "act_section": "Section 14, Section 15",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document",
+    "risk_relevance": null
+  },
+  {
+    "id": "motor_vehicles_004",
+    "category": "motor_vehicles_law",
+    "title": "Driving Without Licence and Traffic Offence Penalties",
+    "text": "Under the Motor Vehicles (Amendment) Act 2019, penalties for traffic offences in India were significantly increased. Driving without a valid licence (Section 3 read with Section 181) attracts a fine of Rs 5,000 and/or imprisonment of up to 3 months for a first offence. Driving under the influence of alcohol or drugs (Section 185) attracts a fine of Rs 10,000 and/or imprisonment of up to 6 months for a first offence, with enhanced penalties for repeat offences. Over-speeding (Section 183) attracts a fine of Rs 1,000 to Rs 2,000 depending on vehicle type. Using a mobile phone while driving (Section 184) attracts a fine of Rs 1,000 to Rs 5,000. Jumping a red signal (Section 177A) attracts a fine of Rs 1,000 to Rs 5,000. Not wearing a seatbelt (Section 194B) attracts a fine of Rs 1,000. Not wearing a helmet (Section 129 read with Section 194D) attracts a fine of Rs 1,000 and a 3-month licence suspension for a repeat offence. These fines apply per offence and can be compounded by police or RTO officers.",
+    "act_name": "Motor Vehicles (Amendment) Act 2019",
+    "act_section": "Section 177, Section 181, Section 183, Section 185",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document,court_notice",
+    "risk_relevance": "high"
+  },
+  {
+    "id": "motor_vehicles_005",
+    "category": "motor_vehicles_law",
+    "title": "Vehicle Registration and Fitness Certificate Requirements",
+    "text": "Every motor vehicle in India must be registered under the Motor Vehicles Act 1988 before it is used on a public road. Registration is done at the Regional Transport Office (RTO) of the owner's district. A new vehicle is issued a temporary registration for 1 month while the permanent registration is processed. The permanent registration certificate (RC) is valid for 15 years for non-transport vehicles (private cars, motorcycles) and 10 years for transport vehicles. After the initial validity period, the RC must be renewed and the vehicle must obtain a fitness certificate. A fitness certificate certifies that the vehicle meets road safety standards. Transport vehicles must obtain a fitness certificate annually. Driving an unregistered vehicle or a vehicle without a valid fitness certificate is an offence under the Motor Vehicles Act. Vehicle insurance is also mandatory for all vehicles — driving without third-party insurance is a criminal offence under Section 196 of the Motor Vehicles Act.",
+    "act_name": "Motor Vehicles Act 1988",
+    "act_section": "Section 39, Section 56",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document",
+    "risk_relevance": "medium"
+  },
+  {
+    "id": "motor_vehicles_006",
+    "category": "motor_vehicles_law",
+    "title": "Challan Process and Motor Vehicle Disputes",
+    "text": "When a traffic violation is detected in India, a challan (fine notice) is issued by the traffic police or transport authority. Challans can be issued on the spot (physical) or electronically (e-challan) through camera-based detection systems. The vehicle owner or driver must pay the challan amount at a police station, traffic court, or online through the state's transport portal within the specified time, typically 60 to 90 days. If the challan is not paid, a court summons may be issued and the case may be treated as a compoundable or non-compoundable offence. Compoundable offences can be settled by paying the fine. Non-compoundable offences (such as driving under the influence causing injury or death) must go through a full court trial. A driver can contest a challan by appearing before the Motor Accidents Claims Tribunal or the Judicial Magistrate's Court within the time limit specified on the challan. The driver has the right to produce evidence and argue that the challan was wrongly issued.",
+    "act_name": "Motor Vehicles Act 1988",
+    "act_section": "Section 200, Section 206",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document,court_notice",
+    "risk_relevance": "medium"
+  },
+  {
+    "id": "criminal_001",
+    "category": "criminal_law",
+    "title": "What is Anticipatory Bail in India",
+    "text": "Anticipatory bail is a direction by the Sessions Court or High Court to release a person on bail in the event of their arrest, granted before the arrest actually happens. It is governed by Section 438 of the Code of Criminal Procedure 1973 (CrPC). A person who apprehends arrest for a non-bailable offence can apply for anticipatory bail. The court considers factors including the nature and gravity of the accusation, the antecedents of the applicant, and the possibility of the applicant fleeing from justice. Anticipatory bail can be granted with conditions such as making oneself available for interrogation, surrendering the passport, or not leaving the country. If anticipatory bail is granted and the person is subsequently arrested, they must be released immediately on bail. A chargesheet being filed does not automatically cancel the anticipatory bail — the court must be separately approached. Anticipatory bail can be cancelled by the court that granted it if the conditions are violated or if new circumstances arise.",
+    "act_name": "Code of Criminal Procedure 1973",
+    "act_section": "Section 438",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document,court_notice",
+    "risk_relevance": null
+  },
+  {
+    "id": "criminal_002",
+    "category": "criminal_law",
+    "title": "Bail in India — Regular Bail and Types",
+    "text": "Bail is a legal mechanism in India by which an arrested person is temporarily released from custody on the condition that they will appear before the court when required. There are three main types of bail in India. Regular bail (Section 437 and 439 CrPC) is applied for after arrest, before or during trial. Bail for bailable offences is a right — the police must grant it. For non-bailable offences, bail is discretionary and granted by a magistrate or sessions court. Interim bail is a temporary bail granted for a short period while the full bail application is being heard. Anticipatory bail (Section 438 CrPC) is granted before arrest when a person anticipates being arrested. The Supreme Court or High Court can grant bail under Article 32 or 226 of the Constitution in exceptional circumstances. Bail is generally not granted in offences punishable with death or life imprisonment unless there are exceptional reasons. Bail conditions typically include surrender of passport, regular reporting to police, and not leaving the jurisdiction.",
+    "act_name": "Code of Criminal Procedure 1973",
+    "act_section": "Section 437, Section 439",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document,court_notice",
+    "risk_relevance": null
+  },
+  {
+    "id": "property_law_001",
+    "category": "property_law",
+    "title": "Property Registration Requirements in India",
+    "text": "Under the Registration Act 1908, the Transfer of Property Act 1882, and the Indian Stamp Act 1899, the purchase or transfer of immovable property in India must be registered at the Sub-Registrar's office in whose jurisdiction the property is located. A sale deed must be executed on non-judicial stamp paper of appropriate value (as per the circle rate of the property) and registered within 4 months of execution. If registration is delayed, the Sub-Registrar can allow late registration with a penalty within 8 months. An unregistered sale deed cannot be used as evidence of title in court proceedings. Before registration, the buyer must verify the title of the property through a title search for at least 30 years. Property mutation (change of ownership in revenue records) must be done separately at the municipal or revenue authority after registration. Gift deeds for immovable property must also be compulsorily registered. A will for property does not require registration but registration is advisable for legal strength.",
+    "act_name": "Registration Act 1908",
+    "act_section": "Section 17, Section 23",
+    "jurisdiction": "India",
+    "document_type_relevance": "property_document,rental_agreement",
+    "risk_relevance": "high"
+  },
+  {
+    "id": "consumer_001",
+    "category": "consumer_law",
+    "title": "Consumer Rights and Complaints in India",
+    "text": "The Consumer Protection Act 2019 provides comprehensive protection to consumers in India. A consumer is any person who buys goods or avails services for consideration. Consumer rights include the right to safety, right to information, right to choose, right to be heard, right to seek redressal, and right to consumer education. Consumers can file complaints with the District Consumer Disputes Redressal Commission (DCDRC) for claims up to Rs 50 lakh, State Commission for claims between Rs 50 lakh and Rs 2 crore, and National Commission for claims above Rs 2 crore. A consumer complaint must be filed within 2 years of the cause of action. The complaint can be filed by the consumer directly without a lawyer. Relief available includes replacement of goods, refund of price, removal of deficiency, compensation for loss, and punitive damages. E-commerce platforms, online transactions, and digital services are also covered under the Act. Misleading advertisements causing harm to consumers are a punishable offence under the 2019 Act.",
+    "act_name": "Consumer Protection Act 2019",
+    "act_section": "Section 35, Section 58",
+    "jurisdiction": "India",
+    "document_type_relevance": "rental_agreement,employment_contract",
+    "risk_relevance": null
+  },
+  {
+    "id": "labour_001",
+    "category": "employment_law",
+    "title": "Minimum Wages and Wage Payment Rights in India",
+    "text": "The Minimum Wages Act 1948 requires employers to pay workers at least the minimum wage fixed by the government for their category of work. Minimum wages are set by state governments for different scheduled employments and are revised periodically. The Payment of Wages Act 1936 regulates the time and mode of wage payment — wages must be paid by the 7th of the following month for establishments with fewer than 1000 workers and by the 10th for others. Deductions from wages are permitted only for specific reasons such as absence from duty, house accommodation provided by employer, advances given, and income tax. Unauthorised deductions from wages are illegal. An employee whose wages are wrongfully withheld can file a complaint before the Payment of Wages Authority appointed by the state government. Remedies include payment of the withheld wages plus interest and compensation up to 10 times the withheld amount for malicious delay. Under the Labour Codes enacted in 2019-2020 (currently pending state-wise implementation), the minimum wage framework is being simplified into a floor wage and state minimum wage structure.",
+    "act_name": "Minimum Wages Act 1948",
+    "act_section": "Section 3, Section 12",
+    "jurisdiction": "India",
+    "document_type_relevance": "employment_contract",
+    "risk_relevance": "medium"
+  },
+  {
+    "id": "digital_001",
+    "category": "digital_law",
+    "title": "Cybercrime and IT Act Provisions in India",
+    "text": "The Information Technology Act 2000 (IT Act) and its 2008 amendments are the primary laws governing cybercrime and digital transactions in India. Key provisions include: Section 66 — hacking or damaging computer systems is punishable with imprisonment up to 3 years and/or fine up to Rs 5 lakh. Section 66C — identity theft (using someone's electronic signature, password, or unique identification without authorisation) is punishable with imprisonment up to 3 years and fine up to Rs 1 lakh. Section 66D — cheating by impersonation using a computer resource is punishable similarly. Section 67 — publishing obscene material in electronic form is punishable with imprisonment up to 3 years and fine up to Rs 5 lakh. Section 43 — unauthorised access to a computer network results in liability to pay compensation to the affected person. Cybercrime complaints can be filed at the nearest cybercrime police station or online at cybercrime.gov.in. The Indian Computer Emergency Response Team (CERT-In) handles cyber incident reporting. Online financial fraud should also be reported to bank helplines immediately and to the RBI ombudsman if unresolved.",
+    "act_name": "Information Technology Act 2000",
+    "act_section": "Section 43, Section 66, Section 66C",
+    "jurisdiction": "India",
+    "document_type_relevance": "legal_document",
+    "risk_relevance": "high"
   }
 ]
